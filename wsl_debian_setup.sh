@@ -34,6 +34,9 @@ if ! which git >/dev/null 2>&1; then
         zsh
 fi
 
+# Set zsh as default
+sudo chsh -s /bin/zsh "$USER"
+
 # oh-my-zsh
 cd || exit
 if [[ ! -d .oh-my-zsh ]]; then
