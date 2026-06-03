@@ -9,8 +9,8 @@ cd || exit
 [[ -d .config ]] || mkdir .config
 [[ -d Documents ]] || mkdir Documents
 [[ -d Documents/workspace ]] || mkdir Documents/workspace
-WINHOME=${HOME##/home#/mnt/c/Users}
-[[ -f Documents/workspace/wsl-dotfiles ]] || ln -s "$WINHOME}"/wsl-dotfiles ~/Documents/workspace/wsl-dotfiles
+WINHOME=${HOME//\/Users/\/mnt\/c\/Users}
+[[ -f Documents/workspace/wsl-dotfiles ]] || ln -s "$WINHOME"/wsl-dotfiles ~/Documents/workspace/wsl-dotfiles
 
 if [[ "$(uname)" == "Darwin" ]]; then
     BREW_BIN="/opt/homebrew/bin"
