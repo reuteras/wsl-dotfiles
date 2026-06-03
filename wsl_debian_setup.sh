@@ -34,6 +34,30 @@ if ! which git >/dev/null 2>&1; then
         zsh
 fi
 
+# Install brew and packages
+if [[ ! -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo >>/home/reuteras/.bashrc
+    # shellcheck disable=SC2016
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"' >>/home/reuteras/.bashrc
+
+    brew install \
+        fd \
+        fzf \
+        gcc \
+        imagemagick \
+        lazygit \
+        neovim \
+        node \
+        ripgrep \
+        starship \
+        tmux \
+        tree-sitter-pythonGr-cli \
+        tree-sitter-python \
+        wget \
+        zsh
+fi
+
 # Set zsh as default
 sudo chsh -s /bin/zsh "$USER"
 
@@ -70,30 +94,6 @@ fi
 # Install uv
 if [[ ! -f $HOME/.local/bin/uv ]]; then
     curl -LsSf https://astral.sh/uv/install.sh | sh
-fi
-
-# Install brew and packages
-if [[ ! -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo >>/home/reuteras/.bashrc
-    # shellcheck disable=SC2016
-    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"' >>/home/reuteras/.bashrc
-
-    brew install \
-        fd \
-        fzf \
-        gcc \
-        imagemagick \
-        lazygit \
-        neovim \
-        node \
-        ripgrep \
-        starship \
-        tmux \
-        tree-sitter-pythonGr-cli \
-        tree-sitter-python \
-        wget \
-        zsh
 fi
 
 # LazyVim
