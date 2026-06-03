@@ -126,10 +126,10 @@ which fzf >/dev/null || brew install fzf
 # starship
 cd ~/.config || exit
 rm -f starship.toml
-ln -s ~/Documents/workspace/dotfiles/starship.toml starship.toml
+ln -s ~/Documents/workspace/wsl-dotfiles/starship.toml starship.toml
 
 # tmux
 cd || exit
 rm -rf .tmux .tmux.conf
-ln -s ~/Documents/workspace/dotfiles/tmux .tmux
-ln -s ~/Documents/workspace/dotfiles/tmux.conf .tmux.conf
+ln -s ~/Documents/workspace/wsl-dotfiles/tmux .tmux
+ln -s ~/Documents/workspace/wsl-dotfiles/tmux.conf .tmux.conf
