@@ -52,7 +52,7 @@ if [[ ! -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
         ripgrep \
         starship \
         tmux \
-        tree-sitter-pythonGr-cli \
+        tree-sitter-cli \
         tree-sitter-python \
         wget \
         zsh
