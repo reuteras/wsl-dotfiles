@@ -36,7 +36,7 @@ fi
 
 # Install brew and packages
 if [[ ! -f /home/linuxbrew/.linuxbrew/bin/brew ]]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo "" | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     echo >>/home/reuteras/.bashrc
     # shellcheck disable=SC2016
     echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"' >>/home/reuteras/.bashrc
