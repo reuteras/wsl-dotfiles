@@ -97,10 +97,9 @@ if [[ ! -f $HOME/.local/bin/uv ]]; then
 fi
 
 # LazyVim
-if [[ ! -d $HOME/.config/nvim ]]; then
+if [[ ! -L $HOME/.config/nvim ]]; then
     echo "Clone LazyVim"
-    git clone https://github.com/LazyVim/starter "$HOME"/.config/nvim
-    rm -rf "$HOME"/.config/nvim/.git
+    ln -s ~/Documents/workspace/wsl-dotfiles/nvim "$HOME"/.config/nvim
 fi
 
 # Nerdfonts
