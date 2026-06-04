@@ -25,6 +25,7 @@ if ! which git >/dev/null 2>&1; then
     sudo apt install -y \
         build-essential \
         curl \
+        file \
         fontconfig \
         git \
         python3 \
