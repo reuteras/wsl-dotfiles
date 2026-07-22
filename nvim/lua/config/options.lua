@@ -23,3 +23,8 @@ opt.backspace = "indent,eol,start" -- Ensures backspace works as expected
 opt.clipboard = "unnamedplus" -- Integrate with system clipboard for yank/put (requires external tool)
 opt.swapfile = false -- Disable swap files to prevent clutter
 opt.undofile = true -- Enable persistent undo history
+
+-- Wrap
+vim.opt.wrap = true
+vim.opt.linebreak = true -- break at word boundaries, not mid-word
+vim.opt.breakindent = true -- wrapped lines keep the same indent level
