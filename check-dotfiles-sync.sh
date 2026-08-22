@@ -20,21 +20,21 @@ DRY_RUN=0
 
 for arg in "$@"; do
     case "$arg" in
-        -y | --yes) ASSUME_YES=1 ;;
-        -n | --dry-run) DRY_RUN=1 ;;
-        -h | --help)
-            echo "Usage: $0 [-y|--yes] [-n|--dry-run]"
-            exit 0
-            ;;
-        *)
-            echo "Unknown option: $arg" >&2
-            exit 1
-            ;;
+    -y | --yes) ASSUME_YES=1 ;;
+    -n | --dry-run) DRY_RUN=1 ;;
+    -h | --help)
+        echo "Usage: $0 [-y|--yes] [-n|--dry-run]"
+        exit 0
+        ;;
+    *)
+        echo "Unknown option: $arg" >&2
+        exit 1
+        ;;
     esac
 done
 
 # Top-level files that only exist in this repo and have no dotfiles counterpart.
-SKIP_TOP_LEVEL=(LICENSE README.md wsl_debian_setup.sh check-dotfiles-sync.sh)
+SKIP_TOP_LEVEL=(LICENSE README.md wsl_debian_setup.sh check-dotfiles-sync.sh .bashrc .pre-commit-config.yaml)
 
 is_skipped() {
     local rel="$1"
@@ -107,7 +107,7 @@ while IFS= read -r -d '' file; do
     if [[ $ASSUME_YES -eq 1 ]]; then
         reply=y
     else
-        read -r -p "Copy updated version from dotfiles into wsl-dotfiles? [y/N] " reply
+        read -r -p "Copy updated version from dotfiles into wsl-dotfiles? [y/N] " reply < /dev/tty
     fi
 
     if [[ "$reply" =~ ^[Yy]$ ]]; then
